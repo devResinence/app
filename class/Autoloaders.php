@@ -7,9 +7,10 @@ class Autoloaders {
 	public static function Autoloding($arr=[]){
 		if(is_array($arr)){
 			foreach($arr as $k =>$v){
-				require 'class/'.$v.'php';
+				require 'class/'.$v.'.php';
 			}
-		}
+		}else{
 		 require 'class/'.$arr.'.php';
+		}
 	}
 }

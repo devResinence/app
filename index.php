@@ -3,7 +3,7 @@ echo 'index.php';
 require 'vendor/autoload.php';
 //require_once('class/form.php');
 require 'class/Autoloaders.php';
-Autoloaders::Autoloding('form');
+Autoloaders::Autoloding(['form','bootstrapForm']);
 
 echo app\Form::Input('nom','checkbox');
 echo app\Form::Text();
