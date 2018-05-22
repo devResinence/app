@@ -5,4 +5,6 @@ require 'vendor/autoload.php';
 require 'class/Autoloaders.php';
 Autoloaders::auto('form');
 
-echo app\Form::input('nom');
+echo app\Form::Input('nom');
+echo app\Form::Text();
+echo app\Form::Select(['name','fruit']);
