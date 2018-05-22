@@ -12,8 +12,8 @@ class Form{
 	 * @param   string $placeholder [field placeholder]
 	 * @return [string]        [field html]
 	 */
-	public static function Input($name,$type='text',$class=null,$id=null,$placeholder=null){
-		return '<input id="'.$id.'" class="'.$class.'" type="'.$type.'" name="'.$name.'" placeholder="'.$placeholder.'">';
+	public static function Input($name,$type='text',$class=null,$id=null,$placeholder=null,$value=null){
+		return '<input id="'.$id.'" class="'.$class.'" type="'.$type.'" name="'.$name.'" placeholder="'.$placeholder.'" value="'.$value.'">';
 	}
 
 	/**
