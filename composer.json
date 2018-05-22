@@ -1,0 +1,13 @@
+{
+    "name": "resinence/app",
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    },
+    "authors": [
+        {
+            "name": "ml lombry",
+            "email": "webmaster@resinence.fr"
+        }
+    ],
+    "require": {}
+}
