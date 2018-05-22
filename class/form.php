@@ -30,6 +30,11 @@ class Form{
 		return "<textarea id=$id class=$class name=$name rows=$rows cols=$cols placeholder=$placeholder ></textarea>";
 	}
 
+	/**
+	 * generate Select field
+	 * @param array  $option just pass a table argument in the format ['','','']
+	 * @param string $name   tag name of select
+	 */
 	public static function Select($option=[],$name='mySelect'){
 		if(is_array($option)){
 			self::$balise='<select name="'.$name.'">';
