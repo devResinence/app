@@ -12,7 +12,7 @@ class Form{
 	 * @return [string]        [field html]
 	 */
 	public static function input($name,$type='text',$class=null,$id=null){
-		return '<input id="$id" class="$class" type="$type" name="$name">';
+		return '<input id="'.$id.'" class="'.$class.'" type="'.$type.'" name="'.$name.'">';
 	}
 		
 }
