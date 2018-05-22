@@ -1,7 +1,6 @@
 {
     "name": "resinence/app",
     "require-dev": {
-        "phpunit/phpunit": "^7.1"
     },
     "authors": [
         {
@@ -9,5 +8,7 @@
             "email": "webmaster@resinence.fr"
         }
     ],
-    "require": {}
+    "require": {
+        "phpunit/phpunit": "^6.5"
+    }
 }
