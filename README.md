@@ -1,0 +1,2 @@
+# app
+Simple application global
