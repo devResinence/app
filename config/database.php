@@ -59,19 +59,40 @@ class Database{
 		return $one ? $this->PDOinstance->query($query)->fetch() : $this->PDOinstance->query($query)->fetchAll();
 	}
 
+	/**
+	 * [slct execute an select query and return all result or one result]
+	 * @param  [string]  $param [select the parameters that have it in our query]
+	 * @param  [string]  $table [table name]
+	 * @param  boolean $one   [if this boolean is true so return one result else returned all result finded]
+	 * @return [type]         [query ansd result]
+	 */
 	public function slct($param,$table,$one=true){
 		return $one ? $this->PDOinstance->query("SELECT $param FROM $table")->fetch(PDO::FETCH_OBJ) : $this->PDOinstance->query("SELECT $param FROM $table")->fetchAll(PDO::FETCH_OBJ);
 	}
 
-	public function inst(){
+	/**
+	 * query insertion in database
+	 * @param  [string] $table  table name
+	 * @param  [string] $fields [expected format : 'nom,prenom,ect']
+	 * @param  [string] $values [expected format : ':nom,:prenom,:ect']
+	 * @param  [string] $data   [expected format : 'nom,prenom,ect']
+	 * @return [type]         [description]
+	 */
+	public function inst($table,$fields,$values,$data){
+		$val = explode(',',$values);
+		$dat = explode(',',$data);
+		$stmt = $this->PDOinstance->prepare("INSERT INTO $table ($fields) VALUES ($values)");
+		foreach ($val as $k => $v) {
+			$stmt->bindParam($v,$dat[$k]);
+		}
+		$stmt->execute();
+	}
+
+	public function updt($table,$id){
 
 	}
 
-	public function updt(){
-
-	}
-
-	public function delt(){
+	public function delt($table,$id){
 
 	}
 
