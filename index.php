@@ -10,4 +10,4 @@ require('config/database.php');
 echo app\Form::Input('nom','checkbox');
 echo app\Form::Text();
 echo app\Form::Select(['name','fruit']);
-var_dump($db = new Database($config));
+var_dump(Database::getInstance($config)->qry('select * from article'));
