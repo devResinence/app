@@ -88,8 +88,19 @@ class Database{
 		$stmt->execute();
 	}
 
-	public function updt($table,$id){
-
+	/**
+	 * [updt update field]
+	 * @param  [type] $table  [table name]
+	 * @param  [type] $fields [fields name]
+	 * @param  [type] $values [values want added]
+	 * @param  [type] $id     [id]
+	 * @return [type]         [description]
+	 */
+	public function updt($table,$fields,$values,$id){
+		$stmt = $this->PDOinstance->prepare("UPDATE $table SET $fields = :$fields WHERE id=:id");
+		$stmt->bindParam(':'.$fields,$values);
+		$stmt->bindParam(':id',$id);
+		$stmt->execute();
 	}
 
 	/**
@@ -100,7 +111,6 @@ class Database{
 	 */
 	public function delt($table,$id){
 		$stmt = $this->PDOinstance->prepare("DELETE FROM $table WHERE id=:id");
-		var_dump($stmt);
 		$stmt->bindParam(':id',$id);
 		$stmt->execute();
 	}
