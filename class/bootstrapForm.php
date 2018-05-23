@@ -1,5 +1,5 @@
 <?php
-
-class BootstrapForm extends app\Form{
+namespace app;
+class BootstrapForm{
 	
 }
