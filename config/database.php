@@ -7,6 +7,8 @@ class Database{
 	'db_user'=>'root',
 	'db_pass'=>''
 	];
+
+	public $table='';
 	/**
 	 * [$PDOinstance is a variable for create instance of PDO]
 	 * @var null
@@ -55,6 +57,22 @@ class Database{
 			throw new Exception("Error Processing Request", 1);
 		}
 		return $one ? $this->PDOinstance->query($query)->fetch() : $this->PDOinstance->query($query)->fetchAll();
+	}
+
+	public function slct($param,$table,$one=true){
+		return $one ? $this->PDOinstance->query("SELECT $param FROM $table")->fetch(PDO::FETCH_OBJ) : $this->PDOinstance->query("SELECT $param FROM $table")->fetchAll(PDO::FETCH_OBJ);
+	}
+
+	public function inst(){
+
+	}
+
+	public function updt(){
+
+	}
+
+	public function delt(){
+
 	}
 
 }
