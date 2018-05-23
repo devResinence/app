@@ -12,4 +12,5 @@ echo app\Form::Input('nom','checkbox');
 echo app\Form::Text();
 echo app\Form::Select(['name','fruit']);
 var_dump(Database::getInstance($config)->slct('*','article'));
-var_dump(Database::getInstance($config)->inst('article','titre,category_id',':titre,:category_id','tom,104'));
+//var_dump(Database::getInstance($config)->inst('article','titre,category_id',':titre,:category_id','tom,104'));
+//Database::getInstance($config)->delt('article',5);

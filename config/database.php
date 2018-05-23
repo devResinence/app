@@ -92,8 +92,17 @@ class Database{
 
 	}
 
+	/**
+	 * [delt delete all fields where id equals this id in settings]
+	 * @param  [string] $table [table name]
+	 * @param  [string] $id    [id]
+	 * @return [type]        [execute a delete query]
+	 */
 	public function delt($table,$id){
-
+		$stmt = $this->PDOinstance->prepare("DELETE FROM $table WHERE id=:id");
+		var_dump($stmt);
+		$stmt->bindParam(':id',$id);
+		$stmt->execute();
 	}
 
 }
