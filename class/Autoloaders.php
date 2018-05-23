@@ -1,19 +1,20 @@
 <?php
 namespace app;
 class Autoloaders {
-	public static $folder ='class';
+	public $folders ='./class';
 	public static $arg=[];
 	/**
 	 * class autoload
 	 * @param array $arr if argument is not array so require name of all class else just this class
 	 */
-	public static function Autoloding($arr=[]){
+	public static function Autoloding($arr=[],$folders){
 		if(is_array($arr)){
 			foreach($arr as $k =>$v){
-				require 'class/'.$v;
+				var_dump($folders.'/'.$v);
+				require $folders.'/'.$v;
 			}
 		}else{
-		 require 'class/'.$arr.'.php';
+		 require $folders.'/'.$arr.'.php';
 		}
 	}
 
@@ -22,9 +23,10 @@ class Autoloaders {
 	 * @param  string $folder link of folder research
 	 * @return function         return autoloding function 
 	 */
-	public static function folders($folder='.'){
+	public static function folders($folder='.',$dir){
+		var_dump($folder);
 		// open folder class for browse all file //
-		if($folder = opendir('./class')){
+		if($folder = opendir($folder)){
 			//as long as I'm fine, I scan the files //
 			while(false !==($file = readdir($folder))){
 				//if file don't .,..,index.php,autoloaders.php//
@@ -34,7 +36,7 @@ class Autoloaders {
 				}
 			}
 			// called autoloding with all file in folder //
-			self::Autoloding(self::$arg);
+			self::Autoloding(self::$arg,$dir);
 		}
 
 	}

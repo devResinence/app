@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 //require_once('class/form.php');
 require 'class/Autoloaders.php';
 //Autoloaders::Autoloding(['form','bootstrapForm']);
-app\Autoloaders::folders();
+app\Autoloaders::folders('./class','./class');
 $config = require('config/config.php');
 require('config/database.php');
 echo app\Form::Input('nom','checkbox');
