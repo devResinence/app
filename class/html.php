@@ -31,5 +31,42 @@ class HTML{
 		$list.="</$type>";	
 		return $list;
 	}
+
+	public static function Table($th=[],$td=[]){
+		$table='<table>';
+			if(!empty($th)){
+				$table.='<tr>';
+					foreach ($th as $k => $v) {
+						$table.='<th>'.$v.'</th>';
+					}
+				$table.='</tr>';
+			}
+			if(!empty($td)){
+				$table.='<tr>';
+					foreach ($td as $k => $v) {
+						$table.='<td>'.$v.'</td>';
+					}
+				$table.='</tr>';
+			}
+			
+		$table.='</table>';
+		return $table;
+	}
+
+	public static function Article(){
+
+	}
+
+	public static function Footer(){
+
+	}
+
+	public static function A($href,$link='',$title=''){
+		return "<a href=$href title=$title>$link</a>";
+	}
+
+	public static function Paginate(){
+
+	}
 	
 }
