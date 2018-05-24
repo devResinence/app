@@ -100,5 +100,13 @@ class HTML{
 	public static function Paginate(){
 
 	}
+
+	public static function Video($width='',$height='',$controls='',$src='',$type='',$poster='',$source=''){
+		return "<video width=$width controls poster=$poster><source src=$src type=$type></video>";
+	}
+
+	public static function Audio($control,$src,$type=''){
+		return "<audio controls=$control><source src=$src type=$type> Votre navigateur ne prend pas en charge l'élément <code>audio</code>.</audio>";
+	} 
 	
 }
