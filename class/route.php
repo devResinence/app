@@ -7,9 +7,16 @@ class Route{
 	 * @param  string $value [values of parameter url]
 	 * @return [type]        [return to the page ]
 	 */
-	public static function get($get,$param='',$value=''){
+	public static function Url($get,$param='',$value=''){
 		return !empty($param) && !empty($value)? header('location:'.$get.'?'.$param.'='.$value): header('location:'.$get);
 	}
 
+	public function get(){
+
+	}
+
+	public function post(){
+		
+	} 
 
 }
