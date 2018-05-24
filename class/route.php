@@ -25,7 +25,7 @@ class Route{
 	 * retrieve information passed by the post variable
 	 * @return [array] [array containing data]
 	 */
-	public function post(){
+	public static function post(){
 		if(isset($_POST)){
 			return array_map('htmlspecialchars',($_POST));
 		}
