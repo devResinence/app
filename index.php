@@ -15,4 +15,4 @@ var_dump(Database::getInstance($config)->slct('*','article'));
 //var_dump(Database::getInstance($config)->updt('article','titre','tom104','1'));
 //Database::getInstance($config)->delt('article',5);
 $get = Route::get();
-echo app\HTML::Table(['a','b'],['1','2']);
+echo app\HTML::Tag('p',app\HTML::A('s','lien'));

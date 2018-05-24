@@ -1,6 +1,14 @@
 <?php
 namespace app;
 class HTML{
+	/**
+	 * [Tag return a tag html
+	 * @param [string] $tag     [description]
+	 * @param string $content [description]
+	 */
+	public static function Tag($tag,$content=''){
+		return "<$tag>$content</$tag>";
+	}
 
 	/**
 	 * [Img description]
@@ -8,6 +16,7 @@ class HTML{
 	 * @param string $alt   [tag alt of image]
 	 * @param string $title [title of image]
 	 */
+
 	public static function Img($src,$alt='',$title=''){
 		return "<img src=$src alt=$alt title=$title>";
 	}
@@ -32,6 +41,11 @@ class HTML{
 		return $list;
 	}
 
+	/**
+	 * [Table tag]
+	 * @param array $th [generate header of tag table]
+	 * @param array $td [generate body od tag table]
+	 */
 	public static function Table($th=[],$td=[]){
 		$table='<table>';
 			if(!empty($th)){
@@ -53,18 +67,36 @@ class HTML{
 		return $table;
 	}
 
-	public static function Article(){
-
+	/**
+	 * [Article tag generated]
+	 * @param [string] $title   [description]
+	 * @param [string] $content [description]
+	 */
+	public static function Article($title,$content){
+		return "<h2>$title</h2><p>$content</p>";
 	}
 
-	public static function Footer(){
-
+	/**
+	 * [Footer description]
+	 * @param [type] $content [description]
+	 */
+	public static function Footer($content){
+		return "<footer>$content</footer>";
 	}
 
+	/**
+	 * [A tag ]
+	 * @param [type] $href  [url of tag a ]
+	 * @param string $link  [link ]
+	 * @param string $title [description]
+	 */
 	public static function A($href,$link='',$title=''){
 		return "<a href=$href title=$title>$link</a>";
 	}
 
+	/**
+	 * [Paginate description]
+	 */
 	public static function Paginate(){
 
 	}
