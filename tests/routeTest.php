@@ -4,6 +4,7 @@ require '../../class/route.php';
 class RouteTest extends TestCase{
 	
 	public static function testGet(){
+		self::assertEmpty(Route::get());
 		self::assertEquals([],Route::get());
 		
 	}
@@ -15,4 +16,5 @@ class RouteTest extends TestCase{
 		}
 		
 	}
+	//testing//
 }
