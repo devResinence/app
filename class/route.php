@@ -11,12 +11,24 @@ class Route{
 		return !empty($param) && !empty($value)? header('location:'.$get.'?'.$param.'='.$value): header('location:'.$get);
 	}
 
-	public function get(){
-
+	/**
+	 * [retrieve information passed by the get variable]
+	 * @return [array] [array containing data]
+	 */
+	public static function get(){
+		if(isset($_GET)){
+			return array_map('htmlspecialchars',($_GET));
+		}
 	}
 
+	/**
+	 * retrieve information passed by the post variable
+	 * @return [array] [array containing data]
+	 */
 	public function post(){
-		
+		if(isset($_POST)){
+			return array_map('htmlspecialchars',($_POST));
+		}
 	} 
 
 }
