@@ -12,5 +12,6 @@ echo app\Form::Input('nom','checkbox');
 echo app\Form::Text();
 echo app\Form::Select(['name','fruit']);
 var_dump(Database::getInstance($config)->slct('*','article'));
-var_dump(Database::getInstance($config)->updt('article','titre','tom104','1'));
+//var_dump(Database::getInstance($config)->updt('article','titre','tom104','1'));
 //Database::getInstance($config)->delt('article',5);
+//Route::get('index.php','name','vegeta');
